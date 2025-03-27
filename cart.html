@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameWorks - Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <h1>FrameWorks</h1>
+        <h2>Showcase your captured moments!!</h2>
+        <input type="text" placeholder="Search" class="search-bar">
+        <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#">All Catalogs</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+                <li><a href="#">Previous Orders</a></li>
+                <li><a href="about_us.html">About us</a></li>
+                <li><a href="#">Sign In/Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="cart-container">
+            <h3>Your Shopping Cart</h3>
+            <!-- Cart items will be dynamically injected here -->
+            <div class="cart-items" id="cart-items"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <h4>Check out more frames and if you have any personalized idea, please <a href='contact_us.html'>CONTACT US</a>, we got you!!</h4>
+    </footer>
+
+    <script>
+        // Function to update the cart UI
+        function renderCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = ''; // Clear current cart
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cartItems.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <p>${item.name}</p>
+                        <span class="price">${item.price}</span>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity">1</span>
+                            <button class="plus-btn">+</button>
+                            <button class="remove-btn">Remove</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(cartItem);
+
+                    // Handle quantity change
+                    cartItem.querySelector('.plus-btn').addEventListener('click', function() {
+                        let quantitySpan = cartItem.querySelector('.quantity');
+                        let quantity = parseInt(quantitySpan.textContent);
+                        quantitySpan.textContent = quantity + 1;
+                    });
+
+                    cartItem.querySelector('.minus-btn').addEventListener('click', function() {
+                        let quantitySpan = cartItem.querySelector('.quantity');
+                        let quantity = parseInt(quantitySpan.textContent);
+                        if (quantity > 1) {
+                            quantitySpan.textContent = quantity - 1;
+                        }
+                    });
+
+                    // Handle remove from cart
+                    cartItem.querySelector('.remove-btn').addEventListener('click', function() {
+                        // Remove the item from localStorage
+                        cartItems.splice(index, 1); // Remove item from array
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                        // Re-render the cart
+                        renderCart();
+                    });
+                });
+            }
+        }
+
+        // Load cart items and render the cart when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCart(); // Initial rendering of cart items
+        });
+    </script>
+</body>
+</html>
