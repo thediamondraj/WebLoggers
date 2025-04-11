@@ -68,7 +68,7 @@ main {
     font-size: 1.2rem;
 }
 
-
+/* Frame grid layout */
 .frame-list {
     display: flex;
     gap: 5mm; /* 5mm space between frames */
@@ -111,6 +111,7 @@ main {
     left: -40px; /* Move the price 40px to the left */
 }
 
+/* Heart icon for wishlist */
 .wishlist-heart {
     position: absolute;
     top: 50%; /* Center heart vertically */
@@ -131,6 +132,7 @@ main {
     border-color: darkred; /* Darker border on hover */
 }
 
+/* Add to Cart Button */
 .add-to-cart {
     background-color: #ff6f61;
     color: white;
@@ -147,6 +149,7 @@ main {
     background-color: #e85a50;
 }
 
+/* Footer */
 footer {
     background-color: pink;
     text-align: center;

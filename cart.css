@@ -80,6 +80,7 @@ main {
     background: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .cart-items {
@@ -117,6 +118,19 @@ main {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 10px;
+}
+
+.cart-item .price {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.cart-item .total-price {
+    font-size: 1rem;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .quantity-controls {
@@ -157,6 +171,65 @@ main {
 
 .quantity-controls .remove-btn:hover {
     background-color: #e02b23;
+}
+
+#cart-total h3 {
+    font-size: 1.4rem;
+    color: #111;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#clear-cart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#clear-cart:hover {
+    background-color: #e02b23;
+}
+
+/* 🆕 Checkout & Continue Buttons */
+.cart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.continue-btn,
+.checkout-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.continue-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.continue-btn:hover {
+    background-color: #3e8e41;
+}
+
+.checkout-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
 }
 
 footer {

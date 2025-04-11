@@ -1,99 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrameWorks - Cart</title>
-    <link rel="stylesheet" href="cart.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameWorks - Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+  <script src="https://js.stripe.com/v3/"></script> <!-- ✅ Stripe -->
 </head>
 <body>
-    <header>
-        <h1>FrameWorks</h1>
-        <h2>Showcase your captured moments!!</h2>
-        <input type="text" placeholder="Search" class="search-bar">
-        <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">All Catalogs</a></li>
-                <li><a href="cart.html" class="active">Cart</a></li>
-                <li><a href="#">Previous Orders</a></li>
-                <li><a href="about_us.html">About us</a></li>
-                <li><a href="#">Sign In/Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="cart-container">
-            <h3>Your Shopping Cart</h3>
-            <!-- Cart items will be dynamically injected here -->
-            <div class="cart-items" id="cart-items"></div>
-        </section>
-    </main>
-    
-    <footer>
-        <h4>Check out more frames and if you have any personalized idea, please <a href='contact_us.html'>CONTACT US</a>, we got you!!</h4>
-    </footer>
+  <header>
+    <h1>FrameWorks</h1>
+    <h2>Showcase your captured moments!!</h2>
+    <input type="text" placeholder="Search" class="search-bar" />
+    <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">All Catalogs</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+        <li><a href="#">Previous Orders</a></li>
+        <li><a href="about_us.html">About us</a></li>
+        <li><a href="#">Sign In/Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script>
-        // Function to update the cart UI
-        function renderCart() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const cartContainer = document.getElementById('cart-items');
-            cartContainer.innerHTML = ''; // Clear current cart
+  <main>
+    <section class="cart-container">
+      <h3>Your Shopping Cart</h3>
+      <div class="cart-items" id="cart-items"></div>
+      <div id="cart-total"></div>
 
-            if (cartItems.length === 0) {
-                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-            } else {
-                cartItems.forEach((item, index) => {
-                    const cartItem = document.createElement('div');
-                    cartItem.classList.add('cart-item');
-                    cartItem.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}">
-                        <p>${item.name}</p>
-                        <span class="price">${item.price}</span>
-                        <div class="quantity-controls">
-                            <button class="minus-btn">-</button>
-                            <span class="quantity">1</span>
-                            <button class="plus-btn">+</button>
-                            <button class="remove-btn">Remove</button>
-                        </div>
-                    `;
-                    cartContainer.appendChild(cartItem);
+      <div class="cart-buttons">
+        <button class="continue-btn" onclick="window.location.href='home.html'">Continue Shopping</button>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+      </div>
 
-                    // Handle quantity change
-                    cartItem.querySelector('.plus-btn').addEventListener('click', function() {
-                        let quantitySpan = cartItem.querySelector('.quantity');
-                        let quantity = parseInt(quantitySpan.textContent);
-                        quantitySpan.textContent = quantity + 1;
-                    });
+      <button id="clear-cart">Clear Cart</button>
+    </section>
+  </main>
 
-                    cartItem.querySelector('.minus-btn').addEventListener('click', function() {
-                        let quantitySpan = cartItem.querySelector('.quantity');
-                        let quantity = parseInt(quantitySpan.textContent);
-                        if (quantity > 1) {
-                            quantitySpan.textContent = quantity - 1;
-                        }
-                    });
+  <footer>
+    <h4>Check out more frames and if you have any personalized idea, please <a href='contact_us.html'>CONTACT US</a>, we got you!!</h4>
+  </footer>
 
-                    // Handle remove from cart
-                    cartItem.querySelector('.remove-btn').addEventListener('click', function() {
-                        // Remove the item from localStorage
-                        cartItems.splice(index, 1); // Remove item from array
-                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  <script>
+    function renderCart() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      cartContainer.innerHTML = '';
+      cartTotal.innerHTML = '';
 
-                        // Re-render the cart
-                        renderCart();
-                    });
-                });
-            }
-        }
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+      }
 
-        // Load cart items and render the cart when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            renderCart(); // Initial rendering of cart items
+      let grandTotal = 0;
+
+      cartItems.forEach((item, index) => {
+        const quantity = item.quantity || 1;
+        const totalPrice = item.price * quantity;
+        grandTotal += totalPrice;
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <p>${item.name}</p>
+          <span class="price">₹${item.price.toFixed(2)}</span>
+          <span class="total-price">Total: ₹${totalPrice.toFixed(2)}</span>
+          <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">${quantity}</span>
+            <button class="plus-btn">+</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+        `;
+        cartContainer.appendChild(cartItem);
+
+        cartItem.querySelector('.plus-btn').addEventListener('click', () => {
+          cartItems[index].quantity = quantity + 1;
+          localStorage.setItem('cartItems', JSON.stringify(cartItems));
+          renderCart();
         });
-    </script>
+
+        cartItem.querySelector('.minus-btn').addEventListener('click', () => {
+          if (quantity > 1) {
+            cartItems[index].quantity = quantity - 1;
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCart();
+          }
+        });
+
+        cartItem.querySelector('.remove-btn').addEventListener('click', () => {
+          cartItems.splice(index, 1);
+          localStorage.setItem('cartItems', JSON.stringify(cartItems));
+          renderCart();
+        });
+      });
+
+      cartTotal.innerHTML = `<h3>Total Amount: ₹${grandTotal.toFixed(2)}</h3>`;
+    }
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      localStorage.removeItem('cartItems');
+      renderCart();
+    });
+
+    // ✅ Stripe checkout simulation
+    async function checkout() {
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+
+      const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      const stripe = Stripe("pk_test_51RCqGdPPJ45crKm6cnaoPNK0RCPhQ0C0vOw95V5OWfRDgNqdXvG1kVqQ2W1qY1wj9gIdIPPBy2ioFCvsNAQ0n7II00ig9yc29O"); // 🔁 Replace with your Stripe Test Key
+
+      alert(`🧾 Total Amount: ₹${totalAmount}\n\nThis would now redirect to Stripe Checkout.`);
+      
+      localStorage.removeItem("cartItems");
+      renderCart();
+
+      // Real use:
+      // const response = await fetch("/create-checkout-session", { method: "POST" });
+      // const session = await response.json();
+      // await stripe.redirectToCheckout({ sessionId: session.id });
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
 </body>
 </html>

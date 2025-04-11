@@ -1,132 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrameWorks - Home</title>
-    <link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FrameWorks - Home</title>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-    <header>
-        <h1>FrameWorks</h1>
-        <h2>Showcase your captured moments!!</h2>
-        <input type="text" placeholder="Search" class="search-bar">
-        <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
-        <nav>
-            <ul>
-                <li><a href="home.html" class="active">Home</a></li>
-                <li><a href="#">All Catalogs</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="#">Previous Orders</a></li>
-                <li><a href="about_us.html">About us</a></li>
-                <li><a href="#">Sign In/Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="catalog">
-            <h3>Our Catalog</h3>
+  <header>
+    <h1>FrameWorks</h1>
+    <h2>Showcase your captured moments!!</h2>
+    <input type="text" placeholder="Search" class="search-bar" />
+    <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
+    <nav>
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="#">All Catalogs</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="#">Previous Orders</a></li>
+        <li><a href="about_us.html">About us</a></li>
+        <li><a href="#">Sign In/Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- Birthday Frames Container -->
-            <div class="frame-category">
-                <h4>Birthday Frames</h4>
-                <div class="frame-list">
-                    <div class="frame">
-                        <img src="images/birthday frame1.jpeg" alt="Birthday Frame 1">
-                        <div class="frame-info">
-                            <p>Birthday Frame 1 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$20.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Birthday Frame 1" data-image="images/birthday frame1.jpeg" data-price="$20.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/birthday frame2.jpeg" alt="Birthday Frame 2">
-                        <div class="frame-info">
-                            <p>Birthday Frame 2 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$25.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Birthday Frame 2" data-image="images/birthday frame2.jpeg" data-price="$25.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/birthday frame4.jpg" alt="Birthday Frame 3">
-                        <div class="frame-info">
-                            <p>Birthday Frame 3 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$20.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Birthday Frame 3" data-image="images/birthday frame4.jpg" data-price="$20.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/birthday frame5.jpg" alt="Birthday Frame 4">
-                        <div class="frame-info">
-                            <p>Birthday Frame 4 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$40.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Birthday Frame 4" data-image="images/birthday frame5.jpg" data-price="$40.00">Add to Cart</button>
-                    </div>
-                </div>
+  <main>
+    <section class="catalog">
+      <h3>Our Catalog</h3>
+
+      <!-- Birthday Frames -->
+      <div class="frame-category">
+        <h4>Birthday Frames</h4>
+        <div class="frame-list">
+          <div class="frame">
+            <img src="images/birthday frame1.jpeg" alt="Birthday Frame 1" />
+            <div class="frame-info">
+              <p>Birthday Frame 1 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$20.00</span>
             </div>
+            <button class="add-to-cart" data-name="Birthday Frame 1" data-image="images/birthday frame1.jpeg" data-price="$20.00">Add to Cart</button>
+          </div>
 
-            <!-- Anniversary Frames Container -->
-            <div class="frame-category">
-                <h4>Anniversary Frames</h4>
-                <div class="frame-list">
-                    <div class="frame">
-                        <img src="images/anniversary frame1.png" alt="Anniversary Frame 1">
-                        <div class="frame-info">
-                            <p>Anniversary Frame 1 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$50.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Anniversary Frame 1" data-image="images/anniversary frame1.png" data-price="$50.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/anniversary frame2.png" alt="Anniversary Frame 2">
-                        <div class="frame-info">
-                            <p>Anniversary Frame 2 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$55.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Anniversary Frame 2" data-image="images/anniversary frame2.png" data-price="$55.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/anniversary frame3.png" alt="Anniversary Frame 3">
-                        <div class="frame-info">
-                            <p>Anniversary Frame 3 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$55.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Anniversary Frame 3" data-image="images/anniversary frame3.png" data-price="$55.00">Add to Cart</button>
-                    </div>
-                    <div class="frame">
-                        <img src="images/anniversary frame4.jpg" alt="Anniversary Frame 4">
-                        <div class="frame-info">
-                            <p>Anniversary Frame 4 <span class="wishlist-heart">❤️</span></p> <!-- Heart icon next to frame name -->
-                            <span class="price">$55.00</span>
-                        </div>
-                        <button class="add-to-cart" data-name="Anniversary Frame 4" data-image="images/anniversary frame4.jpg" data-price="$55.00">Add to Cart</button>
-                    </div>
-                </div>
+          <div class="frame">
+            <img src="images/birthday frame2.jpeg" alt="Birthday Frame 2" />
+            <div class="frame-info">
+              <p>Birthday Frame 2 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$25.00</span>
             </div>
+            <button class="add-to-cart" data-name="Birthday Frame 2" data-image="images/birthday frame2.jpeg" data-price="$25.00">Add to Cart</button>
+          </div>
 
-        </section>
-    </main>
+          <div class="frame">
+            <img src="images/birthday frame4.jpg" alt="Birthday Frame 3" />
+            <div class="frame-info">
+              <p>Birthday Frame 3 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$20.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Birthday Frame 3" data-image="images/birthday frame4.jpg" data-price="$20.00">Add to Cart</button>
+          </div>
 
-    <footer>
-        <h4>Check out more frames and if you have any personalized idea, please <a href="contact_us.html">CONTACT US</a>, we got you!!</h4>
-    </footer>
+          <div class="frame">
+            <img src="images/birthday frame5.jpg" alt="Birthday Frame 4" />
+            <div class="frame-info">
+              <p>Birthday Frame 4 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$40.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Birthday Frame 4" data-image="images/birthday frame5.jpg" data-price="$40.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const itemName = this.getAttribute('data-name');
-                const itemImage = this.getAttribute('data-image');
-                const itemPrice = this.getAttribute('data-price');
+      <!-- Anniversary Frames -->
+      <div class="frame-category">
+        <h4>Anniversary Frames</h4>
+        <div class="frame-list">
+          <div class="frame">
+            <img src="images/anniversary frame1.png" alt="Anniversary Frame 1" />
+            <div class="frame-info">
+              <p>Anniversary Frame 1 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$50.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Anniversary Frame 1" data-image="images/anniversary frame1.png" data-price="$50.00">Add to Cart</button>
+          </div>
 
-                // Store the item in localStorage (for persistence across pages)
-                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                cartItems.push({ name: itemName, image: itemImage, price: itemPrice });
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                alert(`${itemName} added to cart!`);
-            });
-        });
-    </script>
+          <div class="frame">
+            <img src="images/anniversary frame2.png" alt="Anniversary Frame 2" />
+            <div class="frame-info">
+              <p>Anniversary Frame 2 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$55.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Anniversary Frame 2" data-image="images/anniversary frame2.png" data-price="$55.00">Add to Cart</button>
+          </div>
+
+          <div class="frame">
+            <img src="images/anniversary frame3.png" alt="Anniversary Frame 3" />
+            <div class="frame-info">
+              <p>Anniversary Frame 3 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$55.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Anniversary Frame 3" data-image="images/anniversary frame3.png" data-price="$55.00">Add to Cart</button>
+          </div>
+
+          <div class="frame">
+            <img src="images/anniversary frame4.jpg" alt="Anniversary Frame 4" />
+            <div class="frame-info">
+              <p>Anniversary Frame 4 <span class="wishlist-heart">❤️</span></p>
+              <span class="price">$55.00</span>
+            </div>
+            <button class="add-to-cart" data-name="Anniversary Frame 4" data-image="images/anniversary frame4.jpg" data-price="$55.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h4>Check out more frames and if you have any personalized idea, please <a href="contact_us.html">CONTACT US</a>, we got you!!</h4>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function () {
+        const itemName = this.getAttribute('data-name');
+        const itemImage = this.getAttribute('data-image');
+        const itemPrice = parseFloat(this.getAttribute('data-price').replace('$', ''));
+
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingIndex = cartItems.findIndex(item => item.name === itemName);
+
+        if (existingIndex !== -1) {
+          cartItems[existingIndex].quantity += 1;
+        } else {
+          cartItems.push({
+            name: itemName,
+            image: itemImage,
+            price: itemPrice,
+            quantity: 1
+          });
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${itemName} added to cart!`);
+      });
+    });
+  </script>
 </body>
 </html>
