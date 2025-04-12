@@ -39,6 +39,10 @@
             padding: 10px;
             display: block;
         }
+        .nav-link.active {
+            color: rgb(244, 78, 106);
+            border-radius: 5px;
+          }
     nav ul li a:hover {
         color: red;
         font-weight: bold;

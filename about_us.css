@@ -70,6 +70,10 @@ nav ul li a:hover {
 color: red;
 font-weight: bold;
 }
+.nav-link.active {
+    color: rgb(244, 78, 106);
+    border-radius: 5px;
+  }
 main {
     padding: 20px;
 }
