@@ -57,18 +57,26 @@ nav ul {
     justify-content: left;
     margin: 0;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: black;
     text-decoration: none;
     padding: 10px;
     display: block;
 }
+
 nav ul li a:hover {
-color: red;
-font-weight: bold;
+    color: rgb(247, 66, 96);
+    font-weight: bold;
+}
+
+nav ul li a.active {
+    color: rgb(244, 78, 106);
+    border-radius: 5px;
 }
 .nav-link.active {
     color: rgb(244, 78, 106);

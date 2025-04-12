@@ -25,7 +25,6 @@ h2 {
     width: 100%;
     max-width: 800px;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -50,11 +49,10 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.nav-link.active {
+nav ul li a.active {
     color: rgb(244, 78, 106);
     border-radius: 5px;
 }
-
 .nav-link.active {
     color: rgb(244, 78, 106);
     border-radius: 5px;
