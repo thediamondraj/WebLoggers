@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account</title>
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="my_account.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="icon" type="image/png" href="images/logo 2.png">
+  <link rel="shortcut icon" type="image/png" href="images/logo 2.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="images/logo 1.png" alt="FrameWorks Logo" class="site-logo-image">
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search frames..." class="search-bar">
+        </div>
+        
+        <a href="wishlist.html" class="wishlist-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="all_catalog.html">All Catalogs</a></li>
+          <li class="nav-item"><a href="cart.html">Cart</a></li>
+          <li class="nav-item"><a href="previous_orders.html">Previous Orders</a></li>
+          <li class="nav-item"><a href="about_us.html">About us</a></li>
+          <li class="nav-item">
+            <a href="login.html" id="auth-link">Sign In/Up</a>
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <a href="my_account.html">My Account</a>
+              <a href="#" id="logout-link">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Breadcrumb navigation -->
+    <div class="breadcrumb">
+      <a href="home.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">My Account</span>
+    </div>
+    
+    <section class="account-section card">
+      <h2 class="section-title">My Account</h2>
+      
+      <!-- Account not logged in message -->
+      <div id="not-logged-in" class="account-message" style="display: none;">
+        <div class="message-container">
+          <i class="fas fa-user-lock"></i>
+          <h3>Authentication Required</h3>
+          <p>Please log in to view your account details.</p>
+          <a href="login.html" class="primary-button">Login or Sign Up</a>
+        </div>
+      </div>
+      
+      <!-- Account content - shown when logged in -->
+      <div id="account-content" class="account-content" style="display: none;">
+        <div class="account-container">
+          <!-- Account sidebar -->
+          <div class="account-sidebar">
+            <div class="account-profile">
+              <div class="profile-image">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3 id="profile-name">Jane Doe</h3>
+              <p id="profile-email">jane@example.com</p>
+            </div>
+            
+            <div class="account-menu">
+              <a href="#" class="menu-item active" data-section="personal-info">
+                <i class="fas fa-user"></i> Personal Information
+              </a>
+              <a href="#" class="menu-item" data-section="address-book">
+                <i class="fas fa-map-marker-alt"></i> Address Book
+              </a>
+              <a href="previous_orders.html" class="menu-item">
+                <i class="fas fa-shopping-bag"></i> My Orders
+              </a>
+              <a href="#" class="menu-item" data-section="change-password">
+                <i class="fas fa-lock"></i> Change Password
+              </a>
+              <a href="#" class="menu-item" data-section="preferences">
+                <i class="fas fa-cog"></i> Preferences
+              </a>
+            </div>
+          </div>
+          
+          <!-- Account content sections -->
+          <div class="account-details">
+            <!-- Personal Information Section -->
+            <div class="account-section-content" id="personal-info" style="display: block;">
+              <h3 class="section-subtitle">Personal Information</h3>
+              <form id="personal-info-form" class="account-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="last-name">Last Name*</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="birth-date">Birth Date</label>
+                    <input type="date" id="birth-date" name="birth-date">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                      <option value="">Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                      <option value="prefer-not">Prefer not to say</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-buttons">
+                  <button type="submit" class="primary-button">Save Changes</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Address Book Section -->
+            <div class="account-section-content" id="address-book" style="display: none;">
+              <h3 class="section-subtitle">Address Book</h3>
+              
+              <div class="no-addresses" id="no-addresses" style="display: none;">
+                <p>You have no saved addresses.</p>
+                <button class="primary-button" id="add-address-btn"><i class="fas fa-plus"></i> Add New Address</button>
+              </div>
+              
+              <div class="address-list" id="address-list">
+                <!-- Addresses will be added here dynamically -->
+              </div>
+              
+              <div id="address-form-container" class="address-form-container" style="display: none;">
+                <h4>Add New Address</h4>
+                <form id="address-form" class="account-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="address-name">Address Name*</label>
+                      <input type="text" id="address-name" name="address-name" placeholder="Home, Work, etc." required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="street">Street Address*</label>
+                      <input type="text" id="street" name="street" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="city">City*</label>
+                      <input type="text" id="city" name="city" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="state">State/Province*</label>
+                      <input type="text" id="state" name="state" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="zip">Zip/Postal Code*</label>
+                      <input type="text" id="zip" name="zip" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="country">Country*</label>
+                      <input type="text" id="country" name="country" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="address-phone">Phone Number</label>
+                      <input type="tel" id="address-phone" name="address-phone">
+                    </div>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input type="checkbox" id="default-address" name="default-address">
+                    <label for="default-address">Set as default address</label>
+                  </div>
+                  
+                  <div class="form-buttons">
+                    <button type="button" class="secondary-button" id="cancel-address-btn">Cancel</button>
+                    <button type="submit" class="primary-button">Save Address</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Change Password Section -->
+            <div class="account-section-content" id="change-password" style="display: none;">
+              <h3 class="section-subtitle">Change Password</h3>
+              <form id="password-form" class="account-form">
+                <div class="form-group">
+                  <label for="current-password">Current Password*</label>
+                  <input type="password" id="current-password" name="current-password" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="new-password">New Password*</label>
+                  <input type="password" id="new-password" name="new-password" required>
+                  <p class="password-hint">Password must be at least 8 characters with letters, numbers and special characters</p>
+                </div>
+                
+                <div class="form-group">
+                  <label for="confirm-password">Confirm New Password*</label>
+                  <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                
+                <div class="form-buttons">
+                  <button type="submit" class="primary-button">Update Password</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Preferences Section -->
+            <div class="account-section-content" id="preferences" style="display: none;">
+              <h3 class="section-subtitle">Communication Preferences</h3>
+              <form id="preferences-form" class="account-form">
+                <div class="form-check">
+                  <input type="checkbox" id="newsletter" name="newsletter">
+                  <label for="newsletter">Subscribe to email newsletter</label>
+                </div>
+                
+                <div class="form-check">
+                  <input type="checkbox" id="promotions" name="promotions">
+                  <label for="promotions">Receive promotional emails</label>
+                </div>
+                
+                <div class="form-check">
+                  <input type="checkbox" id="order-updates" name="order-updates" checked>
+                  <label for="order-updates">Receive order status updates</label>
+                </div>
+                
+                <div class="form-buttons">
+                  <button type="submit" class="primary-button">Save Preferences</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-column brand-column">
+          <img src="images/logo 1.png" alt="FrameWorks Logo" class="footer-logo">
+          <p class="footer-tagline">Frame your memories beautifully with FrameWorks!</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="all_catalog.html">All Catalogs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="previous_orders.html">Previous Orders</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Categories Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="all_catalog.html">Birthday Frames</a></li>
+            <li><a href="all_catalog.html">Anniversary Frames</a></li>
+            <li><a href="all_catalog.html">Family Frames</a></li>
+            <li><a href="all_catalog.html">Friend Frames</a></li>
+            <li><a href="all_catalog.html">Nature Frames</a></li>
+            <li><a href="all_catalog.html">Travel Frames</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-column contact-column">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Location: Humber Polytechnic</li>
+            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@frameworks.com">contact@frameworks.com</a></li>
+            <li><i class="fas fa-phone"></i> Phone: <a href="tel:4379661688">437-966-1688</a></li>
+          </ul>
+          <a href="contact_us.html" class="contact-btn">Get Custom Frames</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter Subscription -->
+      <div class="newsletter">
+        <h4 class="newsletter-heading">Subscribe to Our Newsletter</h4>
+        <p>Stay updated with our latest designs and offers!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 FrameWorks. All rights reserved.</p>
+        </div>
+        <div class="payment-methods">
+          <img src="images/visa.png" alt="Visa" class="payment-icon">
+          <img src="images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="images/paypal.png" alt="PayPal" class="payment-icon">
+          <img src="images/amex.png" alt="American Express" class="payment-icon">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      
+      if (currentUser) {
+        // Show account content, hide not logged in message
+        document.getElementById('account-content').style.display = 'block';
+        document.getElementById('not-logged-in').style.display = 'none';
+        
+        // Populate user profile data
+        const profileName = document.getElementById('profile-name');
+        const profileEmail = document.getElementById('profile-email');
+        const firstName = document.getElementById('first-name');
+        const lastName = document.getElementById('last-name');
+        const email = document.getElementById('email');
+        
+        // Set profile info with available user data
+        if (currentUser.name) {
+          profileName.textContent = currentUser.name;
+          
+          // Split name for first/last name fields
+          const nameParts = currentUser.name.split(' ');
+          if (nameParts.length > 0) {
+            firstName.value = nameParts[0];
+            if (nameParts.length > 1) {
+              lastName.value = nameParts.slice(1).join(' ');
+            }
+          }
+        }
+        
+        if (currentUser.email) {
+          profileEmail.textContent = currentUser.email;
+          email.value = currentUser.email;
+        }
+        
+        // Set additional user details if available
+        if (currentUser.phone) {
+          document.getElementById('phone').value = currentUser.phone;
+        }
+        
+        if (currentUser.birthDate) {
+          document.getElementById('birth-date').value = currentUser.birthDate;
+        }
+        
+        if (currentUser.gender) {
+          document.getElementById('gender').value = currentUser.gender;
+        }
+        
+        // Check for addresses
+        if (currentUser.addresses && currentUser.addresses.length > 0) {
+          document.getElementById('no-addresses').style.display = 'none';
+          renderAddresses(currentUser.addresses);
+        } else {
+          document.getElementById('no-addresses').style.display = 'block';
+        }
+        
+        // Check for preferences
+        if (currentUser.preferences) {
+          if (currentUser.preferences.newsletter !== undefined) {
+            document.getElementById('newsletter').checked = currentUser.preferences.newsletter;
+          }
+          
+          if (currentUser.preferences.promotions !== undefined) {
+            document.getElementById('promotions').checked = currentUser.preferences.promotions;
+          }
+          
+          if (currentUser.preferences.orderUpdates !== undefined) {
+            document.getElementById('order-updates').checked = currentUser.preferences.orderUpdates;
+          }
+        }
+      } else {
+        // User is not logged in, show message
+        document.getElementById('account-content').style.display = 'none';
+        document.getElementById('not-logged-in').style.display = 'block';
+      }
+      
+      // User dropdown functionality
+      setupUserDropdown();
+      
+      // Section navigation
+      const menuItems = document.querySelectorAll('.menu-item[data-section]');
+      
+      menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Get the section ID from data attribute
+          const sectionId = this.getAttribute('data-section');
+          
+          // Hide all sections
+          document.querySelectorAll('.account-section-content').forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // Show selected section
+          document.getElementById(sectionId).style.display = 'block';
+          
+          // Update active class
+          menuItems.forEach(menuItem => {
+            menuItem.classList.remove('active');
+          });
+          
+          this.classList.add('active');
+        });
+      });
+      
+      // Personal info form
+      const personalInfoForm = document.getElementById('personal-info-form');
+      
+      personalInfoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const birthDate = document.getElementById('birth-date').value;
+        const gender = document.getElementById('gender').value;
+        
+        // Update user data
+        const fullName = firstName + (lastName ? ' ' + lastName : '');
+        currentUser.name = fullName;
+        currentUser.email = email;
+        currentUser.phone = phone;
+        currentUser.birthDate = birthDate;
+        currentUser.gender = gender;
+        
+        // Save updated user data
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Update profile display
+        document.getElementById('profile-name').textContent = fullName;
+        document.getElementById('profile-email').textContent = email;
+        
+        alert('Personal information updated successfully!');
+      });
+      
+      // Password change form
+      const passwordForm = document.getElementById('password-form');
+      
+      passwordForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const currentPassword = document.getElementById('current-password').value;
+        const newPassword = document.getElementById('new-password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        
+        // Validate current password
+        if (currentPassword !== currentUser.password) {
+          alert('Current password is incorrect.');
+          return;
+        }
+        
+        // Validate new password
+        if (newPassword.length < 8) {
+          alert('New password must be at least 8 characters long.');
+          return;
+        }
+        
+        // Check if passwords match
+        if (newPassword !== confirmPassword) {
+          alert('New passwords do not match.');
+          return;
+        }
+        
+        // Update password
+        currentUser.password = newPassword;
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Reset form
+        passwordForm.reset();
+        
+        alert('Password changed successfully!');
+      });
+      
+      // Preferences form
+      const preferencesForm = document.getElementById('preferences-form');
+      
+      preferencesForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get preference values
+        const newsletter = document.getElementById('newsletter').checked;
+        const promotions = document.getElementById('promotions').checked;
+        const orderUpdates = document.getElementById('order-updates').checked;
+        
+        // Create preferences object if it doesn't exist
+        if (!currentUser.preferences) {
+          currentUser.preferences = {};
+        }
+        
+        // Update preferences
+        currentUser.preferences.newsletter = newsletter;
+        currentUser.preferences.promotions = promotions;
+        currentUser.preferences.orderUpdates = orderUpdates;
+        
+        // Save updated user data
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        alert('Preferences updated successfully!');
+      });
+      
+      // Address book functionality
+      const addAddressBtn = document.getElementById('add-address-btn');
+      const cancelAddressBtn = document.getElementById('cancel-address-btn');
+      const addressForm = document.getElementById('address-form');
+      
+      addAddressBtn.addEventListener('click', function() {
+        document.getElementById('address-form-container').style.display = 'block';
+        document.getElementById('no-addresses').style.display = 'none';
+      });
+      
+      cancelAddressBtn.addEventListener('click', function() {
+        document.getElementById('address-form-container').style.display = 'none';
+        addressForm.reset();
+        
+        // Show no addresses message if there are no addresses
+        if (!currentUser.addresses || currentUser.addresses.length === 0) {
+          document.getElementById('no-addresses').style.display = 'block';
+        }
+      });
+      
+      addressForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const addressName = document.getElementById('address-name').value;
+        const street = document.getElementById('street').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+        const country = document.getElementById('country').value;
+        const phone = document.getElementById('address-phone').value;
+        const isDefault = document.getElementById('default-address').checked;
+        
+        // Create new address
+        const newAddress = {
+          id: Date.now().toString(),
+          name: addressName,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          country: country,
+          phone: phone,
+          isDefault: isDefault
+        };
+        
+        // Initialize addresses array if it doesn't exist
+        if (!currentUser.addresses) {
+          currentUser.addresses = [];
+        }
+        
+        // If this is set as default, unset any existing default
+        if (isDefault) {
+          currentUser.addresses.forEach(address => {
+            address.isDefault = false;
+          });
+        }
+        
+        // Add the new address
+        currentUser.addresses.push(newAddress);
+        
+        // Save updated user data
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Render addresses
+        renderAddresses(currentUser.addresses);
+        
+        // Hide form and reset
+        document.getElementById('address-form-container').style.display = 'none';
+        addressForm.reset();
+        
+        alert('Address added successfully!');
+      });
+    });
+    
+    // Function to show/hide dropdown when clicking on username
+    function setupUserDropdown() {
+      const authLink = document.getElementById('auth-link');
+      const userDropdown = document.getElementById('user-dropdown');
+      const logoutLink = document.getElementById('logout-link');
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      
+      if (currentUser) {
+        // User is logged in
+        authLink.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+        
+        // Add logged-in class to parent for styling
+        authLink.parentElement.classList.add('logged-in');
+        
+        // Toggle dropdown when clicking on username
+        authLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+            userDropdown.style.display = 'block';
+          } else {
+            userDropdown.style.display = 'none';
+          }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!authLink.contains(e.target) && !userDropdown.contains(e.target)) {
+            userDropdown.style.display = 'none';
+          }
+        });
+        
+        // Logout functionality
+        logoutLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          if (confirm('Are you sure you want to log out?')) {
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+          }
+        });
+      } else {
+        // User is not logged in, just keep the link to login page
+        authLink.href = 'login.html';
+      }
+    }
+    
+    // Function to render addresses
+    function renderAddresses(addresses) {
+      const addressList = document.getElementById('address-list');
+      addressList.innerHTML = '';
+      
+      addresses.forEach(address => {
+        const addressElement = document.createElement('div');
+        addressElement.className = 'address-item';
+        if (address.isDefault) {
+          addressElement.classList.add('default-address');
+        }
+        
+        addressElement.innerHTML = `
+          <div class="address-header">
+            <h4>${address.name}</h4>
+            ${address.isDefault ? '<span class="default-badge">Default</span>' : ''}
+          </div>
+          <div class="address-content">
+            <p>${address.street}</p>
+            <p>${address.city}, ${address.state} ${address.zip}</p>
+            <p>${address.country}</p>
+            ${address.phone ? `<p>Phone: ${address.phone}</p>` : ''}
+          </div>
+          <div class="address-actions">
+            <button class="edit-address-btn" data-id="${address.id}"><i class="fas fa-edit"></i> Edit</button>
+            <button class="delete-address-btn" data-id="${address.id}"><i class="fas fa-trash"></i> Delete</button>
+            ${!address.isDefault ? `<button class="set-default-btn" data-id="${address.id}"><i class="fas fa-check"></i> Set as Default</button>` : ''}
+          </div>
+        `;
+        
+        addressList.appendChild(addressElement);
+      });
+      
+      // Add action button listeners
+      document.querySelectorAll('.delete-address-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const addressId = this.getAttribute('data-id');
+          deleteAddress(addressId);
+        });
+      });
+      
+      document.querySelectorAll('.set-default-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const addressId = this.getAttribute('data-id');
+          setDefaultAddress(addressId);
+        });
+      });
+      
+      document.querySelectorAll('.edit-address-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const addressId = this.getAttribute('data-id');
+          editAddress(addressId);
+        });
+      });
+    }
+    
+    // Function to delete an address
+    function deleteAddress(addressId) {
+      if (!confirm('Are you sure you want to delete this address?')) {
+        return;
+      }
+      
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      
+      // Filter out the address to delete
+      currentUser.addresses = currentUser.addresses.filter(address => address.id !== addressId);
+      
+      // Save updated user data
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      
+      // Re-render addresses
+      renderAddresses(currentUser.addresses);
+      
+      // Show no addresses message if there are no addresses
+      if (currentUser.addresses.length === 0) {
+        document.getElementById('no-addresses').style.display = 'block';
+      }
+      
+      alert('Address deleted successfully!');
+    }
+    
+    // Function to set default address
+    function setDefaultAddress(addressId) {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      
+      // Update default status
+      currentUser.addresses.forEach(address => {
+        address.isDefault = address.id === addressId;
+      });
+      
+      // Save updated user data
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      
+      // Re-render addresses
+      renderAddresses(currentUser.addresses);
+      
+      alert('Default address updated!');
+    }
+    
+    // Function to edit an address
+    function editAddress(addressId) {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const address = currentUser.addresses.find(addr => addr.id === addressId);
+      
+      if (!address) return;
+      
+      // Populate form with address data
+      document.getElementById('address-name').value = address.name;
+      document.getElementById('street').value = address.street;
+      document.getElementById('city').value = address.city;
+      document.getElementById('state').value = address.state;
+      document.getElementById('zip').value = address.zip;
+      document.getElementById('country').value = address.country;
+      document.getElementById('address-phone').value = address.phone || '';
+      document.getElementById('default-address').checked = address.isDefault;
+      
+      // Show form
+      document.getElementById('address-form-container').style.display = 'block';
+      
+      // Modify form submission to update instead of add
+      const addressForm = document.getElementById('address-form');
+      
+      // Remove existing event listeners
+      const newAddressForm = addressForm.cloneNode(true);
+      addressForm.parentNode.replaceChild(newAddressForm, addressForm);
+      
+      // Add new event listener for updating
+      newAddressForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const addressName = document.getElementById('address-name').value;
+        const street = document.getElementById('street').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+        const country = document.getElementById('country').value;
+        const phone = document.getElementById('address-phone').value;
+        const isDefault = document.getElementById('default-address').checked;
+        
+        // Find the address index
+        const addressIndex = currentUser.addresses.findIndex(addr => addr.id === addressId);
+        
+        // Update the address
+        const updatedAddress = {
+          id: addressId,
+          name: addressName,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          country: country,
+          phone: phone,
+          isDefault: isDefault
+        };
+        
+        // If this is set as default, unset any existing default
+        if (isDefault) {
+          currentUser.addresses.forEach(address => {
+            address.isDefault = false;
+          });
+        }
+        
+        // Replace the old address with updated one
+        currentUser.addresses[addressIndex] = updatedAddress;
+        
+        // Save updated user data
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        
+        // Render addresses
+        renderAddresses(currentUser.addresses);
+        
+        // Hide form and reset
+        document.getElementById('address-form-container').style.display = 'none';
+        newAddressForm.reset();
+        
+        alert('Address updated successfully!');
+        
+        // Reset form to normal add functionality
+        location.reload();
+      });
+    }
+    
+    // Newsletter subscription
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        // In a real application, you would send this email to your server
+        // Here we'll just show a confirmation message
+        alert(`Thank you for subscribing with ${email}! You'll receive our latest updates.`);
+        emailInput.value = '';
+      });
+    }
+  </script>
+</body>
+</html>

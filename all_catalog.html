@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Catalogs</title>
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="all_catalog.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="icon" type="image/png" href="images/logo 2.png">
+  <link rel="shortcut icon" type="image/png" href="images/logo 2.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="images/logo 1.png" alt="FrameWorks Logo" class="site-logo-image">
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search frames..." class="search-bar">
+        </div>
+        
+        <a href="wishlist.html" class="wishlist-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="all_catalog.html" class="active">All Catalogs</a></li>
+          <li class="nav-item"><a href="cart.html">Cart</a></li>
+          <li class="nav-item"><a href="previous_orders.html">Previous Orders</a></li>
+          <li class="nav-item"><a href="about_us.html">About us</a></li>
+          <li class="nav-item">
+            <a href="login.html" id="auth-link">Sign In/Up</a>
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <a href="my_account.html">My Account</a>
+              <a href="#" id="logout-link">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="catalog-section card">
+      <h2 class="section-title">All Catalogs</h2>
+      
+      <!-- Filter sidebar -->
+      <div class="catalog-container">
+        <div class="filter-sidebar">
+          <div class="filter-group">
+            <h3 class="filter-title">Categories</h3>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input type="checkbox" id="birthday" checked>
+                <label for="birthday">Birthday Frames</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="anniversary" checked>
+                <label for="anniversary">Anniversary Frames</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="family" checked>
+                <label for="family">Family Frames</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="friend" checked>
+                <label for="friend">Friend Frames</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="nature" checked>
+                <label for="nature">Nature Frames</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="travel" checked>
+                <label for="travel">Travel Frames</label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="price-slider">
+              <input type="range" min="0" max="200" value="200" class="slider" id="priceRange">
+              <div class="price-labels">
+                <span>$0</span>
+                <span id="priceValue">$200</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Material</h3>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <input type="checkbox" id="wood" checked>
+                <label for="wood">Wood</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="metal" checked>
+                <label for="metal">Metal</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="plastic" checked>
+                <label for="plastic">Acrylic/Plastic</label>
+              </li>
+              <li class="filter-item">
+                <input type="checkbox" id="glass" checked>
+                <label for="glass">Glass</label>
+              </li>
+            </ul>
+          </div>
+
+          <button class="apply-filters-btn">Apply Filters</button>
+        </div>
+        
+        <!-- Catalog Content -->
+        <div class="catalog-content">
+          <!-- Birthday Frames -->
+          <div class="frame-category" data-category="birthday">
+            <h4 class="category-title">Birthday Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="20">
+                <div class="frame-image-container">
+                  <img src="images/birthday frame1.jpeg" alt="Birthday Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Birthday Frame 1</span>
+                    <span class="frame-price">$20.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Birthday Frame 1" data-image="images/birthday frame1.jpeg" data-price="20.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="25">
+                <div class="frame-image-container">
+                  <img src="images/birthday frame2.jpeg" alt="Birthday Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Birthday Frame 2</span>
+                    <span class="frame-price">$25.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Birthday Frame 2" data-image="images/birthday frame2.jpeg" data-price="25.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="30">
+                <div class="frame-image-container">
+                  <img src="images/birthday frame3.jpg" alt="Birthday Frame 3" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Birthday Frame 3</span>
+                    <span class="frame-price">$30.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Birthday Frame 3" data-image="images/birthday frame3.jpg" data-price="30.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="35">
+                <div class="frame-image-container">
+                  <img src="images/birthday frame4.jpg" alt="Birthday Frame 4" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Birthday Frame 4</span>
+                    <span class="frame-price">$35.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Birthday Frame 4" data-image="images/birthday frame4.jpg" data-price="35.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anniversary Frames -->
+          <div class="frame-category" data-category="anniversary">
+            <h4 class="category-title">Anniversary Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="50">
+                <div class="frame-image-container">
+                  <img src="images/anniversary frame1.png" alt="Anniversary Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Anniversary Frame 1</span>
+                    <span class="frame-price">$50.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Anniversary Frame 1" data-image="images/anniversary frame1.png" data-price="50.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="55">
+                <div class="frame-image-container">
+                  <img src="images/anniversary frame2.png" alt="Anniversary Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Anniversary Frame 2</span>
+                    <span class="frame-price">$55.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Anniversary Frame 2" data-image="images/anniversary frame2.png" data-price="55.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="55">
+                <div class="frame-image-container">
+                  <img src="images/anniversary frame3.png" alt="Anniversary Frame 3" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Anniversary Frame 3</span>
+                    <span class="frame-price">$55.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Anniversary Frame 3" data-image="images/anniversary frame3.png" data-price="55.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="55">
+                <div class="frame-image-container">
+                  <img src="images/anniversary frame4.jpg" alt="Anniversary Frame 4" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Anniversary Frame 4</span>
+                    <span class="frame-price">$55.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Anniversary Frame 4" data-image="images/anniversary frame4.jpg" data-price="55.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Family Frames -->
+          <div class="frame-category" data-category="family">
+            <h4 class="category-title">Family Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="65">
+                <div class="frame-image-container">
+                  <img src="images/family1.jpg" alt="Family Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Family Frame 1</span>
+                    <span class="frame-price">$65.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Family Frame 1" data-image="images/family1.jpg" data-price="65.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="70">
+                <div class="frame-image-container">
+                  <img src="images/family2.jpg" alt="Family Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Family Frame 2</span>
+                    <span class="frame-price">$70.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Family Frame 2" data-image="images/family2.jpg" data-price="70.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Friend Frames -->
+          <div class="frame-category" data-category="friend">
+            <h4 class="category-title">Friend Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="45">
+                <div class="frame-image-container">
+                  <img src="images/friend1.jpg" alt="Friend Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Friend Frame 1</span>
+                    <span class="frame-price">$45.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Friend Frame 1" data-image="images/friend1.jpg" data-price="45.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="50">
+                <div class="frame-image-container">
+                  <img src="images/friend2.jpg" alt="Friend Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Friend Frame 2</span>
+                    <span class="frame-price">$50.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Friend Frame 2" data-image="images/friend2.jpg" data-price="50.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Nature Frames -->
+          <div class="frame-category" data-category="nature">
+            <h4 class="category-title">Nature Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="55">
+                <div class="frame-image-container">
+                  <img src="images/nature1.jpg" alt="Nature Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Nature Frame 1</span>
+                    <span class="frame-price">$55.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Nature Frame 1" data-image="images/nature1.jpg" data-price="55.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="60">
+                <div class="frame-image-container">
+                  <img src="images/nature2.jpg" alt="Nature Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Nature Frame 2</span>
+                    <span class="frame-price">$60.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Nature Frame 2" data-image="images/nature2.jpg" data-price="60.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Travel Frames -->
+          <div class="frame-category" data-category="travel">
+            <h4 class="category-title">Travel Frames</h4>
+            <div class="frame-grid">
+              <div class="frame-item" data-price="70">
+                <div class="frame-image-container">
+                  <img src="images/travel4.jpg" alt="Travel Frame 1" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Travel Frame 1</span>
+                    <span class="frame-price">$70.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Travel Frame 1" data-image="images/travel4.jpg" data-price="70.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              
+              <div class="frame-item" data-price="75">
+                <div class="frame-image-container">
+                  <img src="images/travel2.jpg" alt="Travel Frame 2" class="frame-image">
+                  <button class="wishlist-button"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="frame-details">
+                  <div class="frame-info">
+                    <span class="frame-name">Travel Frame 2</span>
+                    <span class="frame-price">$75.00</span>
+                  </div>
+                  <button class="add-to-cart-btn" data-name="Travel Frame 2" data-image="images/travel2.jpg" data-price="75.00">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-column brand-column">
+          <img src="images/logo 1.png" alt="FrameWorks Logo" class="footer-logo">
+          <p class="footer-tagline">Frame your memories beautifully with FrameWorks!</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="all_catalog.html">All Catalogs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="previous_orders.html">Previous Orders</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Categories Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="all_catalog.html">Birthday Frames</a></li>
+            <li><a href="all_catalog.html">Anniversary Frames</a></li>
+            <li><a href="all_catalog.html">Wedding Frames</a></li>
+            <li><a href="all_catalog.html">Baby Frames</a></li>
+            <li><a href="all_catalog.html">Memorial Frames</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-column contact-column">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Location: Humber Polytechnic</li>
+            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@frameworks.com">contact@frameworks.com</a></li>
+            <li><i class="fas fa-phone"></i> Phone: <a href="tel:4379661688">437-966-1688</a></li>
+          </ul>
+          <a href="contact_us.html" class="contact-btn">Get Custom Frames</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter Subscription -->
+      <div class="newsletter">
+        <h4 class="newsletter-heading">Subscribe to Our Newsletter</h4>
+        <p>Stay updated with our latest designs and offers!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 FrameWorks. All rights reserved.</p>
+        </div>
+        <div class="payment-methods">
+          <img src="images/visa.png" alt="Visa" class="payment-icon">
+          <img src="images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="images/paypal.png" alt="PayPal" class="payment-icon">
+          <img src="images/amex.png" alt="American Express" class="payment-icon">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Price range slider functionality
+    const rangeSlider = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    
+    rangeSlider.addEventListener('input', function() {
+      priceValue.textContent = '$' + this.value;
+    });
+
+    // Filter functionality
+    const applyFiltersBtn = document.querySelector('.apply-filters-btn');
+    
+    applyFiltersBtn.addEventListener('click', function() {
+      // Get selected categories
+      const selectedCategories = [];
+      document.querySelectorAll('#anniversary, #birthday, #family, #friend, #nature, #travel').forEach(checkbox => {
+        if (checkbox.checked) {
+          selectedCategories.push(checkbox.id);
+        }
+      });
+      
+      // Get max price
+      const maxPrice = parseInt(document.getElementById('priceRange').value);
+      
+      // Filter the frame categories
+      document.querySelectorAll('.frame-category').forEach(category => {
+        const categoryType = category.getAttribute('data-category');
+        
+        // Check if category matches any selected category
+        const shouldShowCategory = selectedCategories.includes(categoryType);
+        
+        // Hide/show the category based on selection
+        category.style.display = shouldShowCategory ? 'block' : 'none';
+      });
+      
+      // Filter individual frame items by price
+      document.querySelectorAll('.frame-item').forEach(item => {
+        const price = parseInt(item.getAttribute('data-price'));
+        
+        if (price > maxPrice) {
+          item.style.display = 'none';
+        } else {
+          // Only show if its category is visible
+          const category = item.closest('.frame-category');
+          if (category.style.display !== 'none') {
+            item.style.display = 'block';
+          }
+        }
+      });
+    });
+
+    // Cart functionality
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const itemName = this.getAttribute('data-name');
+        const itemImage = this.getAttribute('data-image');
+        const itemPrice = parseFloat(this.getAttribute('data-price'));
+        
+        // Create or update cart items in localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingIndex = cartItems.findIndex(item => item.name === itemName);
+        
+        if (existingIndex !== -1) {
+          cartItems[existingIndex].quantity += 1;
+        } else {
+          cartItems.push({
+            name: itemName,
+            image: itemImage,
+            price: itemPrice,
+            quantity: 1
+          });
+        }
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${itemName} added to cart!`);
+      });
+    });
+
+    // Wishlist button functionality
+    document.querySelectorAll('.wishlist-button').forEach(button => {
+      button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          this.style.backgroundColor = '#ED1C24';
+          this.style.color = 'white';
+        } else {
+          this.style.backgroundColor = 'white';
+          this.style.color = '#ED1C24';
+        }
+      });
+    });
+
+  // Authentication functionality
+function updateAuthLink() {
+  const authLink = document.getElementById('auth-link');
+  const userDropdown = document.getElementById('user-dropdown');
+  const logoutLink = document.getElementById('logout-link');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  
+  if (currentUser) {
+    // User is logged in
+    authLink.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+    
+    // Add logged-in class to parent for styling
+    authLink.parentElement.classList.add('logged-in');
+    
+    // Toggle dropdown when clicking on username
+    authLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+        userDropdown.style.display = 'block';
+      } else {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!authLink.contains(e.target) && !userDropdown.contains(e.target)) {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Logout functionality
+    logoutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (confirm('Are you sure you want to log out?')) {
+        localStorage.removeItem('currentUser');
+        window.location.reload();
+      }
+    });
+  } else {
+    // User is not logged in, just keep the link to login page
+    authLink.href = 'login.html';
+  }
+}
+    
+    // Newsletter subscription
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        // In a real application, you would send this email to your server
+        // Here we'll just show a confirmation message
+        alert(`Thank you for subscribing with ${email}! You'll receive our latest updates.`);
+        emailInput.value = '';
+      });
+    }
+    
+    // Check login status on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAuthLink();
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve search term from URL (e.g., ?search=family)
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTermRaw = urlParams.get('search');
+    if (!searchTermRaw || searchTermRaw.trim() === "") return;
+    const searchTerm = searchTermRaw.trim().toLowerCase();
+    
+    // Get the container holding all categories.
+    const catalogContent = document.querySelector('.catalog-content');
+    if (!catalogContent) return;
+    
+    // Get all category elements INSIDE catalogContent.
+    const categories = Array.from(catalogContent.querySelectorAll('.frame-category'));
+    
+    const matchedCategories = [];
+    const unmatchedCategories = [];
+    
+    categories.forEach(category => {
+      // Get all frame names within this category and convert them to lowercase.
+      const frameNames = Array.from(category.querySelectorAll('.frame-name'))
+                          .map(el => el.textContent.toLowerCase());
+      // Determine if at least one frame name includes the search term.
+      const isMatch = frameNames.some(name => name.includes(searchTerm));
+      if (isMatch) {
+        matchedCategories.push(category);
+      } else {
+        unmatchedCategories.push(category);
+      }
+    });
+    
+    // If no category has a matching frame, show an error message.
+    if (matchedCategories.length === 0) {
+      catalogContent.innerHTML = `<p style="color: red; font-weight: bold; text-align:center; padding: 1rem;">No frames found matching "${searchTermRaw}".</p>`;
+      return;
+    }
+    
+    // Sort matched categories alphabetically by their title.
+    matchedCategories.sort((a, b) => {
+      const titleA = a.querySelector('.category-title').textContent.toLowerCase();
+      const titleB = b.querySelector('.category-title').textContent.toLowerCase();
+      return titleA.localeCompare(titleB);
+    });
+    
+    // Sort unmatched categories alphabetically by their title.
+    unmatchedCategories.sort((a, b) => {
+      const titleA = a.querySelector('.category-title').textContent.toLowerCase();
+      const titleB = b.querySelector('.category-title').textContent.toLowerCase();
+      return titleA.localeCompare(titleB);
+    });
+    
+    // Clear the current content and reinsert categories:
+    // first append the matched ones, then the unmatched ones.
+    catalogContent.innerHTML = "";
+    matchedCategories.forEach(cat => catalogContent.appendChild(cat));
+    unmatchedCategories.forEach(cat => catalogContent.appendChild(cat));
+  });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchBar = document.querySelector('.search-bar');
+      if (searchBar) {
+        searchBar.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = searchBar.value.trim();
+            if (query) {
+              window.location.href = 'all_catalog.html?search=' + encodeURIComponent(query);
+            } else {
+              alert("Please enter a search term before pressing Enter.");
+            }
+          }
+        });
+      }
+    });
+    </script>    
+</body>
+</html>

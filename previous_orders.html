@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previous Orders</title>
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="previous_orders.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="icon" type="image/png" href="images/logo 2.png">
+<link rel="shortcut icon" type="image/png" href="images/logo 2.png">
+</head>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="images/logo 1.png" alt="FrameWorks Logo" class="site-logo-image">
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search frames..." class="search-bar">
+        </div>
+        
+        <a href="wishlist.html" class="wishlist-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+      </div>
+    
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="all_catalog.html">All Catalogs</a></li>
+          <li class="nav-item"><a href="cart.html">Cart</a></li>
+          <li class="nav-item"><a href="previous_orders.html" class="active">Previous Orders</a></li>
+          <li class="nav-item"><a href="about_us.html">About us</a></li>
+          <li class="nav-item">
+            <a href="login.html" id="auth-link">Sign In/Up</a>
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <a href="my_account.html">My Account</a>
+              <a href="#" id="logout-link">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="orders-section card">
+      <h2 class="section-title">Order History</h2>
+      
+      <!-- Authentication Required Message - This will be shown for non-logged-in users -->
+      <div id="auth-required" class="auth-required" style="display: none;">
+        <div class="auth-message">
+          <i class="fas fa-lock"></i>
+          <h3>Authentication Required</h3>
+          <p>Please log in to view your order history.</p>
+          <a href="login.html" class="login-button">Login or Sign Up</a>
+        </div>
+      </div>
+      
+      <!-- Orders List - This will be shown for logged-in users -->
+      <div id="orders-list" class="orders-list" style="display: none;">
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-info">
+              <h3 class="order-id">Order #2025041001</h3>
+              <span class="order-date">April 10, 2025</span>
+            </div>
+            <div class="order-status delivered">
+              <i class="fas fa-check-circle"></i> Delivered
+            </div>
+          </div>
+          
+          <div class="order-items">
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/anniversary frame1.png" alt="Anniversary Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Anniversary Frame 1</h4>
+                <p class="quantity">Quantity: 1</p>
+              </div>
+              <div class="order-item-price">$50.00</div>
+            </div>
+            
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/birthday frame2.jpeg" alt="Birthday Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Birthday Frame 2</h4>
+                <p class="quantity">Quantity: 2</p>
+              </div>
+              <div class="order-item-price">$50.00</div>
+            </div>
+          </div>
+          
+          <div class="order-summary">
+            <div class="order-total">
+              <span>Total:</span>
+              <span>$100.00</span>
+            </div>
+            <div class="order-actions">
+              <button class="view-details-btn">View Details</button>
+              <button class="reorder-btn">Reorder</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-info">
+              <h3 class="order-id">Order #2025032501</h3>
+              <span class="order-date">March 25, 2025</span>
+            </div>
+            <div class="order-status processing">
+              <i class="fas fa-truck"></i> Processing
+            </div>
+          </div>
+          
+          <div class="order-items">
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/anniversary frame3.png" alt="Anniversary Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Anniversary Frame 3</h4>
+                <p class="quantity">Quantity: 1</p>
+              </div>
+              <div class="order-item-price">$55.00</div>
+            </div>
+          </div>
+          
+          <div class="order-summary">
+            <div class="order-total">
+              <span>Total:</span>
+              <span>$55.00</span>
+            </div>
+            <div class="order-actions">
+              <button class="view-details-btn">View Details</button>
+              <button class="track-order-btn">Track Order</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-info">
+              <h3 class="order-id">Order #2025022001</h3>
+              <span class="order-date">February 20, 2025</span>
+            </div>
+            <div class="order-status delivered">
+              <i class="fas fa-check-circle"></i> Delivered
+            </div>
+          </div>
+          
+          <div class="order-items">
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/birthday frame4.jpg" alt="Birthday Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Birthday Frame 3</h4>
+                <p class="quantity">Quantity: 1</p>
+              </div>
+              <div class="order-item-price">$20.00</div>
+            </div>
+            
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/birthday frame5.jpg" alt="Birthday Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Birthday Frame 4</h4>
+                <p class="quantity">Quantity: 1</p>
+              </div>
+              <div class="order-item-price">$40.00</div>
+            </div>
+            
+            <div class="order-item">
+              <div class="order-item-image">
+                <img src="images/anniversary frame8.jpg" alt="Anniversary Frame">
+              </div>
+              <div class="order-item-details">
+                <h4>Anniversary Frame 8</h4>
+                <p class="quantity">Quantity: 1</p>
+              </div>
+              <div class="order-item-price">$115.00</div>
+            </div>
+          </div>
+          
+          <div class="order-summary">
+            <div class="order-total">
+              <span>Total:</span>
+              <span>$175.00</span>
+            </div>
+            <div class="order-actions">
+              <button class="view-details-btn">View Details</button>
+              <button class="reorder-btn">Reorder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Empty orders message - For users who are logged in but have no orders -->
+      <div id="no-orders" class="no-orders" style="display: none;">
+        <div class="empty-orders-message">
+          <i class="fas fa-box-open"></i>
+          <h3>No Orders Found</h3>
+          <p>You haven't placed any orders yet. Browse our collection to find the perfect frames for your memories.</p>
+          <a href="all_catalog.html" class="browse-button">Browse Frames</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-column brand-column">
+          <img src="images/logo 1.png" alt="FrameWorks Logo" class="footer-logo">
+          <p class="footer-tagline">Frame your memories beautifully with FrameWorks!</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="all_catalog.html">All Catalogs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="previous_orders.html">Previous Orders</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Categories Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="all_catalog.html">Birthday Frames</a></li>
+            <li><a href="all_catalog.html">Anniversary Frames</a></li>
+            <li><a href="all_catalog.html">Wedding Frames</a></li>
+            <li><a href="all_catalog.html">Baby Frames</a></li>
+            <li><a href="all_catalog.html">Memorial Frames</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-column contact-column">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Location: Humber Polytechnic</li>
+            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@frameworks.com">contact@frameworks.com</a></li>
+            <li><i class="fas fa-phone"></i> Phone: <a href="tel:4379661688">437-966-1688</a></li>
+          </ul>
+          <a href="contact_us.html" class="contact-btn">Get Custom Frames</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter Subscription -->
+      <div class="newsletter">
+        <h4 class="newsletter-heading">Subscribe to Our Newsletter</h4>
+        <p>Stay updated with our latest designs and offers!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 FrameWorks. All rights reserved.</p>
+        </div>
+        <div class="payment-methods">
+          <img src="images/visa.png" alt="Visa" class="payment-icon">
+          <img src="images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="images/paypal.png" alt="PayPal" class="payment-icon">
+          <img src="images/amex.png" alt="American Express" class="payment-icon">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Check if user is logged in
+    function checkLoggedIn() {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const authRequired = document.getElementById('auth-required');
+      const ordersList = document.getElementById('orders-list');
+      const noOrders = document.getElementById('no-orders');
+      
+      if (currentUser) {
+        // User is logged in
+        
+        // In a real application, we would fetch this user's orders from a database
+        // For this demo, we'll use sample orders if the user is logged in
+        
+        // Check if user has orders (for this demo, we assume all logged-in users have orders)
+        const hasOrders = true; // In a real app, this would be determined by checking user's order history
+        
+        if (hasOrders) {
+          ordersList.style.display = 'block';
+          authRequired.style.display = 'none';
+          noOrders.style.display = 'none';
+        } else {
+          ordersList.style.display = 'none';
+          authRequired.style.display = 'none';
+          noOrders.style.display = 'block';
+        }
+        
+        // Update auth link text
+        updateAuthLink();
+      } else {
+        // User is not logged in, show auth required message
+        ordersList.style.display = 'none';
+        authRequired.style.display = 'block';
+        noOrders.style.display = 'none';
+      }
+    }
+    
+  // Authentication functionality
+function updateAuthLink() {
+  const authLink = document.getElementById('auth-link');
+  const userDropdown = document.getElementById('user-dropdown');
+  const logoutLink = document.getElementById('logout-link');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  
+  if (currentUser) {
+    // User is logged in
+    authLink.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+    
+    // Add logged-in class to parent for styling
+    authLink.parentElement.classList.add('logged-in');
+    
+    // Toggle dropdown when clicking on username
+    authLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+        userDropdown.style.display = 'block';
+      } else {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!authLink.contains(e.target) && !userDropdown.contains(e.target)) {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Logout functionality
+    logoutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (confirm('Are you sure you want to log out?')) {
+        localStorage.removeItem('currentUser');
+        window.location.reload();
+      }
+    });
+  } else {
+    // User is not logged in, just keep the link to login page
+    authLink.href = 'login.html';
+  }
+}
+    
+    // Handle view details button
+    document.querySelectorAll('.view-details-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const orderCard = this.closest('.order-card');
+        const orderId = orderCard.querySelector('.order-id').textContent;
+        alert(`Viewing details for ${orderId}`);
+      });
+    });
+    
+    // Handle reorder button
+    document.querySelectorAll('.reorder-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const orderCard = this.closest('.order-card');
+        const orderId = orderCard.querySelector('.order-id').textContent;
+        alert(`Reordering items from ${orderId}`);
+      });
+    });
+    
+    // Handle track order button
+    document.querySelectorAll('.track-order-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const orderCard = this.closest('.order-card');
+        const orderId = orderCard.querySelector('.order-id').textContent;
+        alert(`Tracking ${orderId}`);
+      });
+    });
+    
+    // Newsletter subscription
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        // In a real application, you would send this email to your server
+        // Here we'll just show a confirmation message
+        alert(`Thank you for subscribing with ${email}! You'll receive our latest updates.`);
+        emailInput.value = '';
+      });
+    }
+    
+    // Run authentication checks when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      checkLoggedIn();
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchBar = document.querySelector('.search-bar');
+    if (searchBar) {
+      searchBar.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const query = searchBar.value.trim();
+          if (query) {
+            window.location.href = 'all_catalog.html?search=' + encodeURIComponent(query);
+          } else {
+            alert("Please enter a search term before pressing Enter.");
+          }
+        }
+      });
+    }
+  });
+  </script>  
+</body>
+</html>

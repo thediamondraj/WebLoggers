@@ -1,126 +1,452 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-header {
-    background: url('images/bgBanner.jpg') no-repeat center center/cover;
-    color: black;
-    padding: 15px;
-    text-align: left;
-    font-size: larger;
-    font-weight: bold;
-}
-h2{
-    color: red;
-    font-style: italic;
-}
-.search-bar {
-    display: block;
-    margin: left;
-    padding: 10px;
-    width:200%;
-    max-width: 800px;
-}
-.wishlist-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 20px;
-    color: #333;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-    text-decoration: none;
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.wishlist-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
+.about-header {
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
-.wishlist-icon:hover {
-    color: rgb(247, 66, 96);
-    font-weight: bold;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: left;
-    margin: 0;
+.about-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-nav ul li {
-    margin: 0 15px;
+.about-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #F98CA;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
+.about-intro {
+  text-align: center;
+  max-width: 800px;
 }
 
-nav ul li a:hover {
-    color: rgb(247, 66, 96);
-    font-weight: bold;
+.about-description {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
-nav ul li a.active {
-    color: rgb(244, 78, 106);
-    border-radius: 5px;
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
-.nav-link.active {
-    color: rgb(244, 78, 106);
-    border-radius: 5px;
-  }
-main {
-    padding: 20px;
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.catalog {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #F98CA;
+  color: #2F2F2F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+
+.card-title {
+  color: #2F2F2F;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+.commitment-list {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.commitment-item i {
+  color: #ED1C24;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.commitment-item h4 {
+  color: #2F2F2F;
+  margin-bottom: 0.3rem;
+}
+
+.commitment-item p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.team-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member-image {
+  width: 150px;
+  height: 150px;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background-image: url('images/user-placeholder.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.member-name {
+  color: #2F2F2F;
+  margin-bottom: 0.3rem;
+}
+
+.member-role {
+  color: #888;
+  font-style: italic;
+}
+
+/* Modern Footer Styles - Updated to ensure all content is on pink background */
+.site-footer {
+  background-color: #F98CA; /* Pink from brand colors */
+  color: #333;
+  padding: 3rem 0 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.brand-column {
+  flex: 1.5;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  color: #ED1C24; /* Red from brand colors */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #ED1C24;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #ED1C24;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 0;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #ED1C24;
+  padding-left: 5px;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.footer-contact i {
+  color: #ED1C24;
+  margin-top: 3px;
+}
+
+.footer-contact a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #ED1C24;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #ED1C24;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #d41920;
+  transform: translateY(-2px);
+}
+
+/* Updated newsletter section - now with a border instead of different background */
+.newsletter {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  /* Removed the background-color that was making it different from the pink footer */
+}
+
+.newsletter-heading {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.95rem;
+}
+
+.newsletter-form button {
+  background-color: #ED1C24;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #d41920;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border color for better visibility */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.payment-icon {
+  height: 24px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  background-color: white; /* Added white background for payment icons */
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .footer-content {
+    gap: 1.5rem;
   }
   
-  .image-box {
-    width: 300px; /* Adjust the box size */
-    height: 300px; /* Adjust the box size */
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-    background-color: #e0e0e0; /* Optional: add a background color to the box */
-    border: 2px solid #333; /* Optional: add a border to the box */
+  .footer-column {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 1 1 100%;
   }
   
-  img {
-    width: 100%; /* Ensure the image fits within the box */
-    height: auto; /* Maintain the image's aspect ratio */
-  }
-  
-
-
-footer{
-    background-color: pink;
+  .footer-bottom {
+    flex-direction: column;
     text-align: center;
-    font-family: 'Lucida Sans';
-    padding: 20px;
-    margin-top: 20px;
-    font-style: italic;
+  }
+  
+  .payment-methods {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .about-header-content {
+    flex-direction: row;
+  }
+  
+  .about-intro {
+    text-align: left;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .footer-column {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-description {
+    padding: 0 1rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .footer-column {
+    flex: 1 1 100%;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .payment-methods {
+    margin-top: 1rem;
+    justify-content: center;
+  }
 }

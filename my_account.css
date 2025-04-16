@@ -1,0 +1,450 @@
+/* My Account Page Styles */
+
+/* User Dropdown Styles */
+.user-dropdown {
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    margin-top: 5px;
+    right: 0;
+  }
+  
+  .user-dropdown a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .user-dropdown a:hover {
+    background-color: #f1f1f1;
+    color: #ED1C24;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  /* When user is logged in, show pointer cursor on name */
+  .nav-item.logged-in #auth-link {
+    cursor: pointer;
+  }
+  
+  /* Breadcrumb navigation */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    color: #ED1C24;
+    text-decoration: underline;
+  }
+  
+  .breadcrumb .separator {
+    margin: 0 0.5rem;
+    color: #999;
+  }
+  
+  .breadcrumb .current {
+    color: #ED1C24;
+    font-weight: 600;
+  }
+  
+  /* Account Section Styles */
+  .account-section {
+    padding: 2rem;
+  }
+  
+  .account-message {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .message-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .message-container i {
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .message-container h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .message-container p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .primary-button {
+    display: inline-block;
+    background-color: #ED1C24;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .primary-button:hover {
+    background-color: #d41920;
+  }
+  
+  .secondary-button {
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .secondary-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Account Content Layout */
+  .account-container {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .account-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+  }
+  
+  .account-details {
+    flex-grow: 1;
+  }
+  
+  /* Profile Section */
+  .account-profile {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-image i {
+    font-size: 2rem;
+    color: #999;
+  }
+  
+  .account-profile h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .account-profile p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  /* Account Menu */
+  .account-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-item i {
+    width: 20px;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    background-color: #f5f5f5;
+    color: #ED1C24;
+  }
+  
+  .menu-item.active {
+    background-color: #f0f0f0;
+    color: #ED1C24;
+    font-weight: 600;
+  }
+  
+  /* Section Content Styles */
+  .account-section-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  /* Form Styles */
+  .account-form {
+    max-width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #ED1C24;
+  }
+  
+  .password-hint {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .form-check input {
+    margin-right: 0.5rem;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Address Book Styles */
+  .address-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .address-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .address-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .default-address {
+    border-color: #ED1C24;
+  }
+  
+  .address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .address-header h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .default-badge {
+    background-color: #ED1C24;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  
+  .address-content {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .address-content p {
+    margin: 0 0 5px 0;
+  }
+  
+  .address-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .address-actions button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-address-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+  }
+  
+  .delete-address-btn:hover {
+    background-color: #ffeeee;
+    border-color: #ffcccc;
+    color: #ff0000;
+  }
+  
+  .set-default-btn:hover {
+    background-color: #eeffee;
+    border-color: #ccffcc;
+    color: #00aa00;
+  }
+  
+  .address-form-container {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+  }
+  
+  .address-form-container h4 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .no-addresses {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .no-addresses p {
+    margin-bottom: 1rem;
+    color: #777;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .account-container {
+      flex-direction: column;
+    }
+    
+    .account-sidebar {
+      width: 100%;
+    }
+    
+    .account-profile {
+      display: flex;
+      text-align: left;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .profile-image {
+      margin: 0;
+    }
+    
+    .account-menu {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .menu-item {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .account-section-content {
+      padding: 1.5rem;
+    }
+    
+    .address-list {
+      grid-template-columns: 1fr;
+    }
+  }

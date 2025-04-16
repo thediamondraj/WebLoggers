@@ -1,47 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FrameWorks - Cart</title>
-  <link rel="stylesheet" href="cart.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="cart.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
+  <link rel="icon" type="image/png" href="images/logo 2.png">
+<link rel="shortcut icon" type="image/png" href="images/logo 2.png">
+</head>
 </head>
 <body>
-  <header>
-    <h1>FrameWorks</h1>
-    <h2>Showcase your captured moments!!</h2>
-    <input type="text" placeholder="Search" class="search-bar" />
-    <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="all_catelog.html">All Catalogs</a></li>
-        <li><a href="cart.html" class="active">Cart</a></li>        
-        <li><a href="#">Previous Orders</a></li>
-        <li><a href="about_us.html">About us</a></li>
-        <li><a href="#">Sign In/Up</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="images/logo 1.png" alt="FrameWorks Logo" class="site-logo-image">
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search frames..." class="search-bar">
+        </div>
+        
+        <a href="wishlist.html" class="wishlist-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="all_catalog.html">All Catalogs</a></li>
+          <li class="nav-item"><a href="cart.html" class="active">Cart</a></li>
+          <li class="nav-item"><a href="previous_orders.html">Previous Orders</a></li>
+          <li class="nav-item"><a href="about_us.html">About us</a></li>
+          <li class="nav-item">
+            <a href="login.html" id="auth-link">Sign In/Up</a>
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <a href="my_account.html">My Account</a>
+              <a href="#" id="logout-link">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="cart-container">
-      <h3>Your Shopping Cart</h3>
-      <div class="cart-items" id="cart-items"></div>
-      <div id="cart-total"></div>
-
-      <div class="cart-buttons">
-        <button class="continue-btn" onclick="window.location.href='home.html'">Continue Shopping</button>
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  <main class="main-content">
+    <section class="cart-section card">
+      <h3 class="section-title">Your Shopping Cart</h3>
+      
+      <div id="cart-items" class="cart-items">
+        <!-- Cart items will be populated by JavaScript -->
       </div>
-
-      <button id="clear-cart">Clear Cart</button>
+      
+      <div id="cart-summary" class="cart-summary">
+        <div id="cart-total" class="cart-total">
+          <!-- Total will be populated by JavaScript -->
+        </div>
+        
+        <div class="cart-actions">
+          <button id="clear-cart" class="clear-cart-btn">
+            <i class="fas fa-trash-alt"></i> Clear Cart
+          </button>
+          
+          <div class="checkout-actions">
+            <a href="home.html" class="continue-shopping-btn">
+              <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
+            <button onclick="checkout()" class="checkout-btn">
+              <i class="fas fa-shopping-cart"></i> Checkout
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <h4>Check out more frames and if you have any personalized idea, please <a href='contact_us.html'>CONTACT US</a>, we got you!!</h4>
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-column brand-column">
+          <img src="images/logo 1.png" alt="FrameWorks Logo" class="footer-logo">
+          <p class="footer-tagline">Frame your memories beautifully with FrameWorks!</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="all_catalog.html">All Catalogs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="previous_orders.html">Previous Orders</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Categories Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="all_catalog.html">Birthday Frames</a></li>
+            <li><a href="all_catalog.html">Anniversary Frames</a></li>
+            <li><a href="all_catalog.html">Wedding Frames</a></li>
+            <li><a href="all_catalog.html">Baby Frames</a></li>
+            <li><a href="all_catalog.html">Memorial Frames</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-column contact-column">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Location: Humber Polytechnic</li>
+            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@frameworks.com">contact@frameworks.com</a></li>
+            <li><i class="fas fa-phone"></i> Phone: <a href="tel:4379661688">437-966-1688</a></li>
+          </ul>
+          <a href="contact_us.html" class="contact-btn">Get Custom Frames</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter Subscription -->
+      <div class="newsletter">
+        <h4 class="newsletter-heading">Subscribe to Our Newsletter</h4>
+        <p>Stay updated with our latest designs and offers!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 FrameWorks. All rights reserved.</p>
+        </div>
+        <div class="payment-methods">
+          <img src="images/visa.png" alt="Visa" class="payment-icon">
+          <img src="images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="images/paypal.png" alt="PayPal" class="payment-icon">
+          <img src="images/amex.png" alt="American Express" class="payment-icon">
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -49,14 +163,24 @@
       const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
       const cartContainer = document.getElementById('cart-items');
       const cartTotal = document.getElementById('cart-total');
+      const cartSummary = document.getElementById('cart-summary');
+      
       cartContainer.innerHTML = '';
       cartTotal.innerHTML = '';
 
       if (cartItems.length === 0) {
-        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        cartContainer.innerHTML = `
+          <div class="empty-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Your cart is empty</p>
+            <a href="all_catalog.html" class="start-shopping-btn">Start Shopping</a>
+          </div>
+        `;
+        cartSummary.style.display = 'none';
         return;
       }
 
+      cartSummary.style.display = 'block';
       let grandTotal = 0;
 
       cartItems.forEach((item, index) => {
@@ -67,19 +191,26 @@
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <p>${item.name}</p>
-          <span class="price">₹${item.price.toFixed(2)}</span>
-          <span class="total-price">Total: ₹${totalPrice.toFixed(2)}</span>
-          <div class="quantity-controls">
-            <button class="minus-btn">-</button>
-            <span class="quantity">${quantity}</span>
-            <button class="plus-btn">+</button>
-            <button class="remove-btn">Remove</button>
+          <div class="cart-item-image">
+            <img src="${item.image}" alt="${item.name}">
           </div>
+          <div class="cart-item-details">
+            <h4 class="cart-item-name">${item.name}</h4>
+            <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+          </div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn minus-btn"><i class="fas fa-minus"></i></button>
+            <span class="quantity">${quantity}</span>
+            <button class="quantity-btn plus-btn"><i class="fas fa-plus"></i></button>
+          </div>
+          <div class="cart-item-total">
+            $${totalPrice.toFixed(2)}
+          </div>
+          <button class="remove-btn"><i class="fas fa-times"></i></button>
         `;
         cartContainer.appendChild(cartItem);
 
+        // Event listeners for quantity buttons
         cartItem.querySelector('.plus-btn').addEventListener('click', () => {
           cartItems[index].quantity = quantity + 1;
           localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -101,15 +232,34 @@
         });
       });
 
-      cartTotal.innerHTML = `<h3>Total Amount: ₹${grandTotal.toFixed(2)}</h3>`;
+      // Calculate shipping and total
+      const shipping = grandTotal > 100 ? 0 : 10;
+      const finalTotal = grandTotal + shipping;
+
+      cartTotal.innerHTML = `
+        <div class="cart-total-row">
+          <span>Subtotal</span>
+          <span>$${grandTotal.toFixed(2)}</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Shipping</span>
+          <span>${shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)}</span>
+        </div>
+        <div class="cart-total-row total">
+          <span>Total</span>
+          <span>$${finalTotal.toFixed(2)}</span>
+        </div>
+      `;
     }
 
     document.getElementById('clear-cart').addEventListener('click', () => {
-      localStorage.removeItem('cartItems');
-      renderCart();
+      if (confirm('Are you sure you want to clear your cart?')) {
+        localStorage.removeItem('cartItems');
+        renderCart();
+      }
     });
 
-    // ✅ Stripe checkout simulation
+    // Stripe checkout simulation
     async function checkout() {
       const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
@@ -118,22 +268,108 @@
         return;
       }
 
-      const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const shipping = subtotal > 100 ? 0 : 10;
+      const totalAmount = subtotal + shipping;
 
-      const stripe = Stripe("pk_test_51RCqGdPPJ45crKm6cnaoPNK0RCPhQ0C0vOw95V5OWfRDgNqdXvG1kVqQ2W1qY1wj9gIdIPPBy2ioFCvsNAQ0n7II00ig9yc29O"); // 🔁 Replace with your Stripe Test Key
+      const stripe = Stripe("pk_test_51RCqGdPPJ45crKm6cnaoPNK0RCPhQ0C0vOw95V5OWfRDgNqdXvG1kVqQ2W1qY1wj9gIdIPPBy2ioFCvsNAQ0n7II00ig9yc29O"); // Replace with your Stripe Test Key
 
-      alert(`🧾 Total Amount: ₹${totalAmount}\n\nThis would now redirect to Stripe Checkout.`);
+      alert(`🧾 Total Amount: $${totalAmount.toFixed(2)}\n\nThis would now redirect to Stripe Checkout.`);
       
       localStorage.removeItem("cartItems");
       renderCart();
 
-      // Real use:
+      // Real implementation would use:
       // const response = await fetch("/create-checkout-session", { method: "POST" });
       // const session = await response.json();
       // await stripe.redirectToCheckout({ sessionId: session.id });
     }
+    
+    // Newsletter subscription
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        // In a real application, you would send this email to your server
+        // Here we'll just show a confirmation message
+        alert(`Thank you for subscribing with ${email}! You'll receive our latest updates.`);
+        emailInput.value = '';
+      });
+    }
 
-    document.addEventListener('DOMContentLoaded', renderCart);
+// Authentication functionality
+function updateAuthLink() {
+  const authLink = document.getElementById('auth-link');
+  const userDropdown = document.getElementById('user-dropdown');
+  const logoutLink = document.getElementById('logout-link');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  
+  if (currentUser) {
+    // User is logged in
+    authLink.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+    
+    // Add logged-in class to parent for styling
+    authLink.parentElement.classList.add('logged-in');
+    
+    // Toggle dropdown when clicking on username
+    authLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+        userDropdown.style.display = 'block';
+      } else {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!authLink.contains(e.target) && !userDropdown.contains(e.target)) {
+        userDropdown.style.display = 'none';
+      }
+    });
+    
+    // Logout functionality
+    logoutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (confirm('Are you sure you want to log out?')) {
+        localStorage.removeItem('currentUser');
+        window.location.reload();
+      }
+    });
+  } else {
+    // User is not logged in, just keep the link to login page
+    authLink.href = 'login.html';
+  }
+}
+    
+    // Run initializations when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCart();
+      updateAuthLink();
+    });
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchBar = document.querySelector('.search-bar');
+    if (searchBar) {
+      searchBar.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const query = searchBar.value.trim();
+          if (query) {
+            window.location.href = 'all_catalog.html?search=' + encodeURIComponent(query);
+          } else {
+            alert("Please enter a search term before pressing Enter.");
+          }
+        }
+      });
+    }
+  });
+  </script>  
 </body>
 </html>

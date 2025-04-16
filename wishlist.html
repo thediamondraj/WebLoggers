@@ -1,49 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrameWorks - Wishlist</title>
-    <link rel="stylesheet" href="wishlist.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameWorks - Wishlist</title>
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="wishlist.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="icon" type="image/png" href="images/logo 2.png">
+<link rel="shortcut icon" type="image/png" href="images/logo 2.png">
+</head>
 </head>
 <body>
-    <header>
-        <h1>FrameWorks</h1>
-        <h2> Showcase your captured moments!!</h2>
-        <input type="text" placeholder="Search" class="search-bar">
-        <a href="wishlist.html" class="wishlist-icon">Wishlist❤️</a>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="all_catelog.html">All Catalogs</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="#">Previous Orders</a></li>
-                <li><a href="about_us.html">About us</a></li>
-                <li><a href="#">Sign In/Up</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="catalog">
-            <h3>Your Wishlist</h3>
-            <div class="frame-list">
-                <div class="frame">
-                    <img src="images/birthday frame2.jpeg" alt="Birthday Frame 1">
-                    <p>Birthday Frame 1</p>
-                    <button class="remove-btn">Remove</button>
-                </div>
-                <div class="frame">
-                    <img src="images/anniversary frame1.png" alt="Anniversary Frame 1">
-                    <p>Anniversary Frame 1</p>
-                    <button class="remove-btn">Remove</button>
-                </div>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="images/logo 1.png" alt="FrameWorks Logo" class="site-logo-image">
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" placeholder="Search frames..." class="search-bar">
+        </div>
+        
+        <a href="wishlist.html" class="wishlist-link">
+          <i class="fas fa-heart"></i> Wishlist
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="all_catalog.html">All Catalogs</a></li>
+          <li class="nav-item"><a href="cart.html">Cart</a></li>
+          <li class="nav-item"><a href="previous_orders.html">Previous Orders</a></li>
+          <li class="nav-item"><a href="about_us.html">About us</a></li>
+          <li class="nav-item">
+            <a href="login.html" id="auth-link">Sign In/Up</a>
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <a href="my_account.html">My Account</a>
+              <a href="#" id="logout-link">Logout</a>
             </div>
-        </section>
-    </main>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <footer>
-        <h4> Check out more frames and if you have any personalized idea, please <a href='contact us.html'>CONTACT US</a>, we got you!!</h4>
-    </footer>
-</body>
-</html>
+  <main class="main-content">
+    <section class="wishlist-section card">
+      <h2 class="section-title">Your Wishlist</h2>
+      
+      <div id="wishlist-grid" class="wishlist-grid">
+        <div class="wishlist-item">
+          <div class="wishlist-image-container">
+            <img src="images/birthday frame2.jpeg" alt="Birthday Frame 2" class="wishlist-image">
+            <button class="remove-from-wishlist"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="wishlist-details">
+            <h3 class="wishlist-name">Birthday Frame 2</h3>
+            <p class="wishlist-price">$25.00</p>
+            <button class="move-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="wishlist-item">
+          <div class="wishlist-image-container">
+            <img src="images/anniversary frame1.png" alt="Anniversary Frame 1" class="wishlist-image">
+            <button class="remove-from-wishlist"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="wishlist-details">
+            <h3 class="wishlist-name">Anniversary Frame 1</h3>
+            <p class="wishlist-price">$50.00</p>
+            <button class="move-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="wishlist-item">
+          <div class="wishlist-image-container">
+            <img src="images/anniversary frame8.jpg" alt="Anniversary Frame 8" class="wishlist-image">
+            <button class="remove-from-wishlist"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="wishlist-details">
+            <h3 class="wishlist-name">Anniversary Frame 8</h3>
+            <p class="wishlist-price">$115.00</p>
+            <button class="move-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="wishlist-empty" class="wishlist-empty" style="display: none;">
+        <div class="empty-wishlist">
+          <i class="fas fa-heart-broken"></i>
+          <p>Your wishlist is empty</p>
+          <a href="all_catalog.html" class="browse-frames-btn">Browse Frames</a>
+        </div>
+      </div>
+      
+      <div id="wishlist-actions" class="wishlist-actions">
+        <button class="clear-wishlist-btn">Clear Wishlist</button>
+        <button class="add-all-to-cart-btn">Add All to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Brand Column -->
+        <div class="footer-column brand-column">
+          <img src="images/logo 1.png" alt="FrameWorks Logo" class="footer-logo">
+          <p class="footer-tagline">Frame your memories beautifully with FrameWorks!</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="all_catalog.html">All Catalogs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="previous_orders.html">Previous Orders</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Categories Column -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="all_catalog.html">Birthday Frames</a></li>
+            <li><a href="all_catalog.html">Anniversary Frames</a></li>
+            <li><a href="all_catalog.html">Wedding Frames</a></li>
+            <li><a href="all_catalog.html">Baby Frames</a></li>
+            <li><a href="all_catalog.html">Memorial Frames</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-column contact-column">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Location: Humber Polytechnic</li>
+            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@frameworks.com">contact@frameworks.com</a></li>
+            <li><i class="fas fa-phone"></i> Phone: <a href="tel:4379661688">437-966-1688</a></li>
+          </ul>
+          <a href="contact_us.html" class="contact-btn">Get Custom Frames</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter Subscription -->
+      <div class="newsletter">
+        <h4 class="newsletter-heading">Subscribe to Our Newsletter</h4>
+        <p>Stay updated with our latest designs and offers!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 FrameWorks. All rights reserved.</p>
+        </div>
+        <div class="payment-methods">
+          <img src="images/visa.png" alt="Visa" class="payment-icon">
+          <img src="images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="images/paypal.png" alt="PayPal" class="payment-icon">
+          <img src="images/amex.png" alt="American Express" class="payment-icon">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.remove-from-wishlist').forEach(button => {
+      button.addEventListener('click', function() {
+        const wishlistItem = this.closest('.wishlist-item');
+        wishlistItem.style.opacity = '0';
+        setTimeout(() => {
+          wishlistItem.remove();
+          checkWishlistEmpty();
+        }, 300);
+      });
+    });
+    
+    document.querySelectorAll('.move-to-cart-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const wishlistItem = this.closest('.wishlist-item');
+        const itemName = wishlistItem.querySelector('.wishlist-name').textContent;
+        const itemPrice = wishlistItem.querySelector('.wishlist-price').textContent;
+        const itemImage = wishlistItem.querySelector('.wishlist-image').getAttribute('src');
+        
+        // Add to cart logic
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingIndex = cartItems.findIndex(item => item.name === itemName);
+        
+        if (existingIndex !== -1) {
+          cartItems[existingIndex].quantity += 1;
+        } else {
+          cartItems.push({
+            name: itemName,
+            image: itemImage,
+            price: parseFloat(itemPrice.replace('$', '')),
+            quantity: 1
+          });
+        }
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${itemName} added to cart!`);
+        
+        // Optional: Remove from wishlist after adding to cart
+        wishlistItem.style.opacity = '0';
+        setTimeout(() => {
+          wishlistItem.remove();
+          checkWishlistEmpty();
+        }, 300);
+      });
+    });
+    
+    document.querySelector('.clear-wishlist-btn').addEventListener('click', function() {
+      if (confirm('Are you sure you want to clear your wishlist?')) {
+        document.querySelectorAll('.wishlist-item').forEach(item => {
+          item.style.opacity = '0';
+        });
+        
+        setTimeout(() => {
+          document.querySelector('.wishlist-grid').innerHTML = '';
+          checkWishlistEmpty();
+        }, 300);
+      }
+    });
+    
+    document.querySelector('.add-all-to-cart-btn').addEventListener('click', function() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      let itemsAdded = 0;
+      
+      document.querySelectorAll('.wishlist-item').forEach(item => {
+        const itemName = item.querySelector('.wishlist-name').textContent;
+        const itemPrice = item.querySelector('.wishlist-price').textContent;
+        const itemImage = item.querySelector('.wishlist-image').getAttribute('src');
+        
+        const existingIndex = cartItems.findIndex(cartItem => cartItem.name === itemName);
+        
+        if (existingIndex !== -1) {
+          cartItems[existingIndex].quantity += 1;
+        } else {
+          cartItems.push({
+            name: itemName,
+            image: itemImage,
+            price: parseFloat(itemPrice.replace('$', '')),
+            quantity: 1
+          });
+        }
+        
+        itemsAdded++;
+      });
+      
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert(`${itemsAdded} items added to cart!`);
+      
+      // Optional: Clear wishlist after adding all to cart
+      document.querySelectorAll('.wishlist-item').forEach(item => {
+        item.style.opacity = '0';
+      });
+      
+      setTimeout(() => {
+        document.querySelector('.wishlist-grid').innerHTML = '';
+        checkWishlistEmpty();
+      }, 300);
+    });
+    
+    function checkWishlistEmpty() {
+      const wishlistItems = document.querySelectorAll('.wishlist-item');
+      const wishlistGrid = document.getElementById('wishlist-grid');
+      const emptyWishlist = document.getElementById('wishlist-empty');
+      const wishlistActions = document.getElementById('wishlist-actions');
+      
+      if (wishlistItems.length === 0) {
+        wishlistGrid.style.display = 'none';
+        emptyWishlist.style.display = 'block';
+        wishlistActions.style.display = 'none';
+      } else {
+        wishlistGrid.style.display = 'grid';
+        emptyWishlist.style.display = 'none';
+        wishlistActions.style.display = 'flex';
+      }
+    }
+    
+    // Update auth link text based on login status
+    function updateAuthLink() {
+      const authLink = document.getElementById('auth-link');
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      
+      if (currentUser) {
+        // User is logged in
+        authLink.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0
